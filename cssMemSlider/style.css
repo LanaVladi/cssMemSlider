@@ -50,8 +50,6 @@
       grid-row-end: 3;
       grid-column-start: 1;
       grid-column-end: 3;
-
-
   }
 
   .slide-img {
@@ -114,7 +112,6 @@
       margin: 5px;
       opacity: 0.5;
       padding: 9px;
-      transition: all 0.4s ease;
   }
 
   .button:hover {
@@ -126,6 +123,8 @@
 
   .button:active {
       background-color: rgb(247, 95, 123);
+      transition: 0.5s;
+      cursor: pointer;
   }
 
 
@@ -134,8 +133,9 @@
       display: flex;
   }
 
-  #slide-1:checked~.controls #btn-1 {
-      background-color: rgb(82, 197, 138);
+  #slide-1:checked~#controls #btn-1 {
+      background-color: rgb(2, 7, 4);
+      border: 0.7rem solid rgb(210, 243, 80);
   }
 
   #slide-2:checked~.slide-window-02 {
@@ -143,8 +143,9 @@
       display: flex;
   }
 
-  #slide-2:checked~.controls #btn-2 {
-      background-color: rgb(82, 197, 138);
+  #slide-2:checked~#controls #btn-2 {
+      background-color: rgb(2, 7, 4);
+      border: 0.7rem solid rgb(210, 243, 80);
   }
 
   #slide-3:checked~.slide-window-03 {
@@ -152,8 +153,9 @@
       display: flex;
   }
 
-  #slide-3:checked~.controls #btn-3 {
-      background-color: rgb(82, 197, 138);
+  #slide-3:checked~#controls #btn-3 {
+      background-color: rgb(2, 7, 4);
+      border: 0.7rem solid rgb(210, 243, 80);
   }
 
   #slide-4:checked~.slide-window-04 {
@@ -161,6 +163,31 @@
       display: flex;
   }
 
-  #slide-4:checked~.controls #btn-4 {
-      background-color: rgb(82, 197, 138);
+
+  #slide-4:checked~#controls #btn-4 {
+      background-color: rgb(2, 7, 4);
+      border: 0.7rem solid rgb(210, 243, 80);
+  }
+
+  #slide-1:checked~.slide-window-01 .img-1,
+  #slide-2:checked~.slide-window-02 .img-2,
+  #slide-3:checked~.slide-window-03 .img-3,
+  #slide-4:checked~.slide-window-04 .img-4,
+  #slide-1:checked~.slide-window-01 .slide-text,
+  #slide-2:checked~.slide-window-02 .slide-text,
+  #slide-3:checked~.slide-window-03 .slide-text,
+  #slide-4:checked~.slide-window-04 .slide-text {
+      transform: translateY(0);
+      animation: move .5s ease-in-out;
+
+  }
+
+  @keyframes move {
+      0% {
+          opacity: 0;
+      }
+
+      100% {
+          opacity: 1;
+      }
   }
