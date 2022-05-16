@@ -191,3 +191,27 @@
           opacity: 1;
       }
   }
+
+
+  /* Media Queries  */
+
+  @media (max-width: 550px) {
+      .slider {
+          max-width: 40rem;
+          height: 47rem;
+          grid-template-rows: 29rem 17rem;
+          grid-template-columns: 60% 40%;
+          padding: 0 2rem;
+      }
+
+      .wrapper-controls {
+          grid-column-start: 1;
+          grid-column-end: 3;
+          justify-self: center;
+          padding-top: 7rem;
+      }
+
+      .slide-text {
+          margin-top: 65px;
+      }
+  }
