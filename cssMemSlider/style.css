@@ -1,0 +1,219 @@
+  * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      background-color: rgb(144, 197, 207);
+      font-size: 62.5%;
+  }
+
+  body {
+      width: 100%;
+      height: 100vh;
+      display: flex;
+  }
+
+  .wrapper {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      align-items: center;
+      margin: 0 auto;
+  }
+
+  .slider {
+      max-width: 60rem;
+      width: 100%;
+      height: 47rem;
+      border: 0.3rem seagreen solid;
+      margin: 0 auto;
+      background-color: rgb(144, 197, 207);
+      display: grid;
+      grid-template-rows: 39rem 7rem;
+      grid-template-columns: 80% 20%;
+      padding: 0 4rem;
+  }
+
+  .slide-window {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      overflow: hidden;
+      opacity: 0;
+      display: none;
+      margin-top: 1rem;
+      background-color: rgb(144, 197, 207);
+      grid-row-start: 1;
+      grid-row-end: 3;
+      grid-column-start: 1;
+      grid-column-end: 3;
+  }
+
+  .slide-img {
+      text-align: center;
+      width: 100%;
+      height: 70%;
+  }
+
+  .slide-img img {
+      width: 100%;
+      height: 100%;
+      margin-bottom: 0.5rem;
+      margin-top: 0.5rem;
+      object-fit: contain;
+  }
+
+  .slide-text {
+      color: rgb(81, 75, 75);
+      width: 100%;
+      font-family: 'Macondo', cursive;
+      font-weight: 600;
+      font-size: 1.3rem;
+      margin-top: 3.5rem;
+      text-shadow: -0.1rem -0.1rem 0rem rgb(204, 204, 248),
+          0.3rem 0.3rem 0rem rgb(204, 204, 248);
+      background-color: rgb(144, 197, 207);
+      text-align: start;
+  }
+
+  .slide-input {
+      display: none;
+      width: 0;
+      height: 0;
+  }
+
+  .wrapper-controls {
+      display: flex;
+      grid-row-start: 2;
+      grid-row-end: 3;
+      grid-column-start: 2;
+      grid-column-end: 3;
+      align-items: flex-start;
+      justify-self: end;
+      margin-bottom: 1rem;
+  }
+
+  .controls {
+      display: flex;
+      margin: 0;
+      text-align: center;
+      cursor: pointer;
+      z-index: 1;
+  }
+
+  .button {
+      width: 4rem;
+      height: 4rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+  }
+
+  .span {
+      display: block;
+      width: 2.0rem;
+      height: 1.6rem;
+      border-radius: 2rem;
+      background-color: rgb(199, 247, 7);
+      opacity: 0.5;
+      transition: 0.5s;
+  }
+
+  .button:hover .span {
+      opacity: 0.5;
+      background-color: azure;
+  }
+
+
+  .button:active .span {
+      background-color: rgb(247, 95, 123);
+  }
+
+  #slide-1:checked~.slide-window-01 {
+      opacity: 1;
+      display: flex;
+  }
+
+  #slide-1:checked~.wrapper-controls #controls #span-1 {
+      background-color: rgb(2, 7, 4);
+  }
+
+  #slide-2:checked~.slide-window-02 {
+      opacity: 1;
+      display: flex;
+  }
+
+  #slide-2:checked~.wrapper-controls #controls #span-2 {
+      background-color: rgb(2, 7, 4);
+
+  }
+
+  #slide-3:checked~.slide-window-03 {
+      opacity: 1;
+      display: flex;
+  }
+
+  #slide-3:checked~.wrapper-controls #controls #span-3 {
+      background-color: rgb(2, 7, 4);
+  }
+
+  #slide-4:checked~.slide-window-04 {
+      opacity: 1;
+      display: flex;
+  }
+
+  #slide-4:checked~.wrapper-controls #controls #span-4 {
+      background-color: rgb(2, 7, 4);
+  }
+
+  #slide-1:checked~.slide-window-01 .img-1,
+  #slide-2:checked~.slide-window-02 .img-2,
+  #slide-3:checked~.slide-window-03 .img-3,
+  #slide-4:checked~.slide-window-04 .img-4,
+  #slide-1:checked~.slide-window-01 .slide-text,
+  #slide-2:checked~.slide-window-02 .slide-text,
+  #slide-3:checked~.slide-window-03 .slide-text,
+  #slide-4:checked~.slide-window-04 .slide-text {
+      transform: translateY(0);
+      animation: move .5s ease-in-out;
+
+  }
+
+  @keyframes move {
+      0% {
+          opacity: 0;
+      }
+
+      100% {
+          opacity: 1;
+      }
+  }
+
+
+  /* Media Queries  */
+
+  @media (max-width: 550px) {
+      .slider {
+          max-width: 40rem;
+          height: 47rem;
+          grid-template-rows: 29rem 17rem;
+          grid-template-columns: 60% 40%;
+          padding: 0 2rem;
+      }
+
+      .wrapper-controls {
+          grid-column-start: 1;
+          grid-column-end: 3;
+          justify-self: center;
+          padding-top: 7rem;
+      }
+
+      .slide-text {
+          margin-top: 6.5rem;
+      }
+  }
